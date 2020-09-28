@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                margin: 0;
+            }        
+            canvas { width: 100%; height: 100%;}
+        </style>
+    </head>
+    <body>
+        <script src="js/three.js"></script>
+        <script>
+            //sets up the three.js scene
+            var scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x85a5ff);
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+            camera.position.z = 950;
+            
+            //sets up the renderer
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            //adds an event listener so that when the window is resized the scene resized with it
+            window.addEventListener('resize', function()
+            {
+                var width = window.innerWidth;
+                var height = window.innerHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            });
+
+            //SETTING UP A LIGHT
+            //  creates a directional light
+            const light = new THREE.DirectionalLight( 0xffffff, 5.0);
+            //  positions the light
+            var lightX = 1000;
+            var lightY = 1000;
+            light.position.set(lightX, lightY);
+            //  adds light to scene
+            scene.add(light);
+
+
+            //SHAPES
+            //adds a small box that helps me visualize where my light is coming from
+            var box_mat = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+            var box_mesh = new THREE.CubeGeometry(50, 50, 50);
+            var box = new THREE.Mesh(box_mesh, box_mat);
+            box.position.set(lightX, lightY);
+            scene.add(box);
+            
+            //ground
+            var ground_mat = new THREE.MeshStandardMaterial( {color: 0x00ff00} );
+            var ground_mesh = new THREE.CubeGeometry(10000, 10, 10000);
+            var ground = new THREE.Mesh(ground_mesh, ground_mat);
+            ground.position.set(0, -200, 0);
+            scene.add(ground);
+
+            //body/torso
+            var body_mat = new THREE.MeshStandardMaterial( {color: 0xc70000} );
+            var body_mesh = new THREE.SphereGeometry(100);   
+            var body = new THREE.Mesh(body_mesh, body_mat);
+
+            //head
+            var head_mat = new THREE.MeshStandardMaterial( {color: 0xf2e2b6} ); //material for head
+            var head_mesh = new THREE.SphereGeometry(50, 0, 0); //mesh for head
+            var head = new THREE.Mesh(head_mesh, head_mat);
+            head.position.set(0, 140, 0);
+
+            // right hand
+            var hand_mat =  new THREE.MeshStandardMaterial( {color: 0xf2e2b6} ); //this is the material for the hands
+            var hand_mesh = new THREE.SphereGeometry(30, 0, 0); //this is the mesh for the hands
+            var right_hand = new THREE.Mesh(hand_mesh, hand_mat);
+            right_hand.position.set(-150, 0,0);
+
+            // left hand, check right hand for material and mesh
+            var left_hand = new THREE.Mesh(hand_mesh, hand_mat);
+            left_hand.position.set(150, 0, 0);
+
+            //right leg
+            var leg_mat = new THREE.MeshStandardMaterial( {color: 0x0044ff} ); //material for legs
+            var leg_mesh = new THREE.SphereGeometry(40, 0, 0); //mesh for legs
+            var right_leg = new THREE.Mesh(leg_mesh, leg_mat);
+            right_leg.position.set(60, -140, 0);
+            
+            //left leg
+            var left_leg = new THREE.Mesh(leg_mesh, leg_mat);
+            left_leg.position.set(-60, -140, 0);
+            //scene.add(left_leg);
+            
+            //groups all the shapes for the avatar together
+            group = new THREE.Object3D();
+            group.add(body);
+            group.add(head);
+            group.add(right_hand);
+            group.add(left_hand);
+            group.add(right_leg);
+            group.add(left_leg);
+            scene.add(group); //adds them all to the scene
+
+            //game logic
+            var update = function ()
+            {
+                group.rotation.y = group.rotation.y+0.01;
+            };
+            
+            //draw scene
+            var render = function ()
+            {
+                renderer.render(scene, camera);
+            };
+
+            //run GameLoop (update, render, repeat)
+
+            var last = 0
+
+            var GameLoop = function (now)
+            {
+                requestAnimationFrame(GameLoop);
+
+                if (!last || now - last >=2*1000)
+                {
+                    last = now;
+                    group.positon.x = group.position.x + 10;
+                }
+
+                update();
+                render();
+            };
+            
+            GameLoop();
+        </script>
+    </body>
+</html>
