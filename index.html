@@ -50,11 +50,11 @@
 
             //SHAPES
             //adds a small box that helps me visualize where my light is coming from
-            var box_mat = new THREE.MeshBasicMaterial( {color: 0xffff00} );
-            var box_mesh = new THREE.CubeGeometry(50, 50, 50);
-            var box = new THREE.Mesh(box_mesh, box_mat);
-            box.position.set(lightX, lightY);
-            scene.add(box);
+            var sun_mat = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+            var sun_mesh = new THREE.CubeGeometry(50, 50, 50);
+            var sun = new THREE.Mesh(sun_mesh, sun_mat);
+            sun.position.set(lightX, lightY);
+            scene.add(sun);
             
             //ground
             var ground_mat = new THREE.MeshStandardMaterial( {color: 0x00ff00} );
@@ -109,6 +109,9 @@
             var update = function ()
             {
                 group.rotation.y = group.rotation.y+0.01;
+
+                sun.rotation.y += 0.01;
+                sun.rotation.x += 0.01;
             };
             
             //draw scene
@@ -118,18 +121,9 @@
             };
 
             //run GameLoop (update, render, repeat)
-
-            var last = 0
-
             var GameLoop = function (now)
             {
                 requestAnimationFrame(GameLoop);
-
-                if (!last || now - last >=2*1000)
-                {
-                    last = now;
-                    group.positon.x = group.position.x + 10;
-                }
 
                 update();
                 render();
