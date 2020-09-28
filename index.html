@@ -12,6 +12,7 @@
     </head>
     <body>
         <script src="js/three.js"></script>
+        <script src="js/OrbitControls.js"></script>
         <script>
             //sets up the three.js scene
             var scene = new THREE.Scene();
@@ -33,6 +34,8 @@
                 camera.aspect = width / height;
                 camera.updateProjectionMatrix();
             });
+
+            controls = new THREE.OrbitControls(camera, renderer.domElement); //sets up the three.js orbit controls
 
             //SETTING UP A LIGHT
             //  creates a directional light
