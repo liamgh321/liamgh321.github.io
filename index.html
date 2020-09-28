@@ -18,7 +18,10 @@
             var scene = new THREE.Scene();
             scene.background = new THREE.Color(0x85a5ff);
             var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
-            camera.position.z = 950;
+            camera.position.z = 650;
+            camera.position.y = 500;
+            camera.rotation.x = -0.3;
+            //camera.rotation.x = 100;
             
             //sets up the renderer
             var renderer = new THREE.WebGLRenderer();
@@ -35,13 +38,13 @@
                 camera.updateProjectionMatrix();
             });
 
-            controls = new THREE.OrbitControls(camera, renderer.domElement); //sets up the three.js orbit controls
+            //controls = new THREE.OrbitControls(camera, renderer.domElement); //sets up the three.js orbit controls
 
             //SETTING UP A LIGHT
             //  creates a directional light
             const light = new THREE.DirectionalLight( 0xffffff, 5.0);
             //  positions the light
-            var lightX = 1000;
+            var lightX = 100;
             var lightY = 1000;
             light.position.set(lightX, lightY);
             //  adds light to scene
@@ -55,12 +58,28 @@
             var sun = new THREE.Mesh(sun_mesh, sun_mat);
             sun.position.set(lightX, lightY);
             scene.add(sun);
+
+
+            //scenery used to help players realize they are moving
+            var geometry = new THREE.CubeGeometry(50,50,50);
+			var material = new THREE.MeshPhongMaterial( { color: 0xffffff, flatShading: true } );
+
+			for ( var i = 0; i < 100; i ++ ) 
+            {
+				var mesh = new THREE.Mesh( geometry, material );
+				mesh.position.x = Math.random() * 5000 - 2500;
+				mesh.position.y = 0;
+				mesh.position.z = Math.random() * 5000 - 2500;
+				mesh.updateMatrix();
+				mesh.matrixAutoUpdate = false;
+				scene.add( mesh );
+            }
             
             //ground
             var ground_mat = new THREE.MeshStandardMaterial( {color: 0x00ff00} );
             var ground_mesh = new THREE.CubeGeometry(10000, 10, 10000);
             var ground = new THREE.Mesh(ground_mesh, ground_mat);
-            ground.position.set(0, -200, 0);
+            ground.position.set(0, -30, 0);
             scene.add(ground);
 
             //body/torso
@@ -104,12 +123,47 @@
             group.add(right_leg);
             group.add(left_leg);
             scene.add(group); //adds them all to the scene
+            group.position.y += 150;
+
+            //enables keyboard controls
+            document.addEventListener('keydown', function(event)
+            {
+                var code = event.keyCode;
+
+                var speed = 10;
+                if(code == 37 || code == 65)
+                { // left
+                    group.position.x -= speed;
+                    camera.position.x -= speed;
+
+                    group.rotation.set(0, -1.5, 0)
+                }
+                if (code == 38 || code == 87)
+                { // up
+                    group.position.z -= speed;
+                    camera.position.z -= speed;
+
+                    group.rotation.set(0, 0, 0)
+                }
+                if (code == 39 || code == 68) 
+                { // right
+                    group.position.x += speed;
+                    camera.position.x += speed;
+
+                    group.rotation.set(0, 1.5, 0)
+                }
+                if (code == 40 || code == 83) 
+                { // down
+                    group.position.z += speed;
+                    camera.position.z += speed;
+                    
+                    group.rotation.set(0, 0, 0)
+                }
+            });
 
             //game logic
             var update = function ()
             {
-                group.rotation.y = group.rotation.y+0.01;
-
                 sun.rotation.y += 0.01;
                 sun.rotation.x += 0.01;
             };
