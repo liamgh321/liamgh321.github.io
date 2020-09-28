@@ -67,7 +67,7 @@ ground.position.set(0, -30, 0);
 scene.add(ground);
 
 //body/torso
-var body_mat = new THREE.MeshStandardMaterial( {color: 0xc70000} );
+var body_mat = new THREE.MeshStandardMaterial( {color: 0xc70000, wireframe: true} );
 var body_mesh = new THREE.SphereGeometry(100);   
 var body = new THREE.Mesh(body_mesh, body_mat);
 
