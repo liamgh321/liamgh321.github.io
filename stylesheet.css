@@ -9,7 +9,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background: transparent;
 }
 
-p
+#poop
 {
     float: left;
     color: yellow;
@@ -26,18 +26,38 @@ p
 {
     float: left;
     width: fit-content;
-    height: ;
     padding: 20px;
     background-color: grey;
     border: 1px solid black;
     border-radius: 10px;
     text-align: left;
     margin-left: 200px;
+    margin-top: 60px;
 }
 
 #mainDiv
 {
     width: 75%;
+    height: 500px;
     background-color: yellow;
     padding: 20px;
+    border: 5px solid black;
+}
+
+#messageDiv
+{
+    float: left;
+    width: 15%;
+    padding: 10px;
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 150px;
+    margin-top: 150px;
+}
+
+#message
+{
+    width: fit-content;
+    height: fit-content;
 }
