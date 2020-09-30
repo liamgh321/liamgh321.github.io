@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Clever Title</title>
-        <style>
-            body
-            {
-                margin: 0;
-            }        
-            canvas { width: 100%; height: 100%;}
-        </style>
+        <link rel="stylesheet" href="stylesheet.css">
     </head>
     <body>
-        <script src="js/three.js"></script>
-        <script src="js/OrbitControls.js"></script>
-        <script src="js/game.js?v=9_28_2020_3">
-        </script>
+        <script src="js/script.js"></script>
+        <center>
+            <div id="mainDiv">
+                <p>
+                    I love my buns
+                </p>
+                <div id="formDiv">
+                    <form name="register" action="js/registerAcion.js">
+                        <label for="uName">Username:</label><br>
+                        <input type="text" name="username" required><br>
+                        <label for="Password" size="50">Password:</label><br>
+                        <input type="text" required><br>
+                        <label for="email" size="50">Email:</label><br>
+                        <input type="email" required><br>
+                        <label for="question">Enter security question:</label><br>
+                        <input type="text" name="question" required><br>
+                        <label for="answer">Secuirty question answer:</label><br>
+                        <input type="text" name="answer" required><br>
+                        <label for="gender">Gender (please check one):</label><br>
+                        <input type="checkbox">
+                        <label for="male">Male</label><br>
+                        <input type="checkbox">
+                        <label for="female">Female</label><br>
+                        Select State:<br>
+                        <select name="state">
+                            <option></option>
+                            <option>MA</option>
+                            <option>CT</option>
+                            <option>WA</option>
+                            <option>CA</option>
+                            <option>FL</option>
+                        </select><br><br>
+                        <input type="submit" value="Submit">&nbsp;&nbsp;
+                        <input type="reset"><br>
+                        
+                    </form>
+                </div>
+            </div>
+        </center>
     </body>
 </html>
