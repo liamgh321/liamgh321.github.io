@@ -1,19 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
     <head>
-        <title>Clever Title</title>
-        <style>
-            body
-            {
-                margin: 0;
-            }        
-            canvas { width: 100%; height: 100%;}
-        </style>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesheet.css">
+        <title>John Smith's Blog</title>
     </head>
     <body>
-        <script src="js/three.js"></script>
-        <script src="js/OrbitControls.js"></script>
-        <script src="js/game.js?v=9_28_2020_3">
-        </script>
+        <div id="mainDiv">
+            <nav id="navBar">
+                <a href="" id="loginLink">Login</a>
+                <a href="" id="regLink">Register</a>
+                <a href="" class="navButtons" id="homeLink">Home</a>
+                <a href="" class="navButtons" id="mostPopLink">Most Popular</a>
+                <a href="" class="navButtons" id="mostRecLink">Most Recent</a>
+            </nav>
+            <div id="bannerImgDiv">BANNER PICTURE GOES HERE
+                <center>
+                    <div id="pfpDiv">
+                        PROFILE PICTURE
+                    </div>
+                </center>
+            </div>
+            <br>
+            <br>
+            <center>
+                <h3 id="blogTitle">
+                    John Smith's Blog
+                </h3>
+            </center>
+            <div class="blogBlock">
+                <div class="blogImg" id="blogImg1"></div>
+                <div class="blogImg" id="blogImg2"></div>
+                <p class="blogTitle">
+                    Blog Title
+                </p>
+                <p class="blogSubtitle">
+                    Blog Sub-title
+                </p>
+                <p style="margin-top: 115px; margin-left: 140px; padding-right: 10px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices blandit erat sed fermentum. Sed scelerisque lacus et condimentum congue.
+                    <br><br>
+                    Morbi eu purus id mauris lobortis bibendum. Praesent nec placerat mi. Maecenas sodales fermentum turpis a vehicula. tincidunt aliquam just.
+                </p>
+            </div>
+            <div class="blogBlock">
+                <div class="blogImg" id="blogImg1"></div>
+                <div class="blogImg" id="blogImg2"></div>
+                <p class="blogTitle">
+                    Blog Title
+                </p>
+                <p class="blogSubtitle">
+                    Blog Sub-title
+                </p>
+                <p style="margin-top: 115px; margin-left: 140px; padding-right: 10px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices blandit erat sed fermentum. Sed scelerisque lacus et condimentum congue.
+                    <br><br>
+                    Morbi eu purus id mauris lobortis bibendum. Praesent nec placerat mi. Maecenas sodales fermentum turpis a vehicula. tincidunt aliquam just.
+                </p>
+            </div>
+            <div id="sidebar">
+                <b><p style="text-align: right; text-decoration: underline;">Most Recent</p></b>
+                <a href="" class="sidebarLinks">
+                    <div class="mostRecentBlogBlock">Blog Title</div>
+                </a>
+                <a href="" class="sidebarLinks">
+                    <div class="mostRecentBlogBlock">Blog Title</div>
+                </a>
+                <a href="" class="sidebarLinks">
+                    <div class="mostRecentBlogBlock">Blog Title</div>
+                </a>
+                <b><p style="text-align: right; text-decoration: underline;">Most Popular</p></b>
+                <a href="" class="sidebarLinks">
+                    <div class="mostRecentBlogBlock">Blog Title</div>
+                </a>
+                <a href="" class="sidebarLinks">
+                    <div class="mostRecentBlogBlock">Blog Title</div>
+                </a>
+            </div>
+        </div>
     </body>
+    <footer>
+        <div id="mainFooterDiv">
+            <div id="footer">
+                Footer Text
+            </div>
+        </div>
+    </footer>
 </html>
