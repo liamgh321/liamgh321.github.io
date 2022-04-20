@@ -8,7 +8,6 @@ body {
     height: 1100px;
     margin-right: auto;
     margin-left: auto;
-    background-color: yellow;
 }
 
 #navBar {
@@ -60,6 +59,11 @@ body {
     background-color: white;
     line-height: 20px;
     margin-top: 30px;
+}
+
+#pfpPic {
+    height: 150px;
+    width: 150px;
 }
 
 #blogTitle {
