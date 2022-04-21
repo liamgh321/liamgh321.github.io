@@ -7,84 +7,98 @@
     </head>
     <body>
         <div id="mainDiv">
-            <nav id="navBar">
-                <a href="" id="loginLink">Login</a>
-                <a href="" id="regLink">Register</a>
-                <a href="" class="navButtons" id="homeLink">Home</a>
-                <a href="" class="navButtons" id="mostPopLink">Most Popular</a>
-                <a href="" class="navButtons" id="mostRecLink">Most Recent</a>
-            </nav>
-            <div id="bannerImgDiv">
-                BANNER PLACEHOLDER
+            <header id="header">
+                <nav id="navBar">
+                    <a href="" id="loginLink">Login</a>
+                    <a href="" id="regLink">Register</a>
+                    <a href="index.html" class="navButtons" id="homeLink">Home</a>
+                    <a href="" class="navButtons" id="mostPopLink">Most Popular</a>
+                    <a href="" class="navButtons" id="mostRecLink">Most Recent</a>
+                </nav>
+                <div id="bannerImgDiv">
+                    <center>
+                        <div id="pfpDiv">
+                            
+                            <img id="pfpPic" src="images/placeholderpfp.jpg">
+                        </div>
+                    </center>
+                </div>
                 <center>
-                    <div id="pfpDiv">
-                        
-                        <img id="pfpPic" src="images/placeholderpfp.jpg">
-                    </div>
+                    <h3 id="blogTitle">
+                        John Smith's Blog
+                    </h3>
                 </center>
+            </header>
+            <div id="contentDiv">
+                <a href="blogpost1.html" class="blogBlockLink">
+                    <div class="blogBlock">
+                        <div class="blogImg" id="blogImg1">
+                            <img src="images/Rome_landmark.jpg" class="blogImg">
+                        </div>
+                        <div class="blogImg" id="blogImg2">
+                            <img src="images/Colosseum.jpg" class="blogImg">
+                        </div>
+                        <p class="blogTitle">
+                            Blog Title
+                        </p>
+                        <p class="blogSubtitle">
+                            Blog Sub-title
+                        </p>
+                        <p style="margin-top: 115px; margin-left: 140px; padding-right: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices blandit erat sed fermentum. Sed scelerisque lacus et condimentum congue.
+                            <br><br>
+                            Morbi eu purus id mauris lobortis bibendum. Praesent nec placerat mi. Maecenas sodales fermentum turpis a vehicula. tincidunt aliquam just.
+                        </p>
+                    </div>
+                </a>
+                <a href="blogpost2.html" class="blogBlockLink">
+                    <div class="blogBlock">
+                        <div class="blogImg" id="blogImg1">
+                            <img src="images/dublin.jpg" class="blogImg">
+                        </div>
+                        <p class="blogTitle">
+                            Blog Title
+                        </p>
+                        <p class="blogSubtitle">
+                            Blog Sub-title
+                        </p>
+                        <p style="margin-top: 115px; margin-left: 140px; padding-right: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices blandit erat sed fermentum. Sed scelerisque lacus et condimentum congue.
+                            <br><br>
+                            Morbi eu purus id mauris lobortis bibendum. Praesent nec placerat mi. Maecenas sodales fermentum turpis a vehicula. tincidunt aliquam just.
+                        </p>
+                    </div>
+                </a>
+                <div id="sidebar">
+                    <b><p style="text-align: right; text-decoration: underline;">Most Recent</p></b>
+                    <a href="blogpost3.html" class="sidebarLinks">
+                        <div class="mostRecentBlogBlock" id="firstRel"></div>
+                    </a>
+                    <a href="" class="sidebarLinks">
+                        <div class="mostRecentBlogBlock">Blog Title</div>
+                    </a>
+                    <a href="" class="sidebarLinks">
+                        <div class="mostRecentBlogBlock">Blog Title</div>
+                    </a>
+                    <b><p style="text-align: right; text-decoration: underline;">Most Popular</p></b>
+                    <a href="" class="sidebarLinks">
+                        <div class="mostRecentBlogBlock">Blog Title</div>
+                    </a>
+                    <a href="" class="sidebarLinks">
+                        <div class="mostRecentBlogBlock">Blog Title</div>
+                    </a>
+                </div>
             </div>
             <br>
             <br>
-            <center>
-                <h3 id="blogTitle">
-                    John Smith's Blog
-                </h3>
-            </center>
-            <div class="blogBlock">
-                <div class="blogImg" id="blogImg1"></div>
-                <div class="blogImg" id="blogImg2"></div>
-                <p class="blogTitle">
-                    Blog Title
-                </p>
-                <p class="blogSubtitle">
-                    Blog Sub-title
-                </p>
-                <p style="margin-top: 115px; margin-left: 140px; padding-right: 10px;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices blandit erat sed fermentum. Sed scelerisque lacus et condimentum congue.
-                    <br><br>
-                    Morbi eu purus id mauris lobortis bibendum. Praesent nec placerat mi. Maecenas sodales fermentum turpis a vehicula. tincidunt aliquam just.
-                </p>
-            </div>
-            <div class="blogBlock">
-                <div class="blogImg" id="blogImg1"></div>
-                <div class="blogImg" id="blogImg2"></div>
-                <p class="blogTitle">
-                    Blog Title
-                </p>
-                <p class="blogSubtitle">
-                    Blog Sub-title
-                </p>
-                <p style="margin-top: 115px; margin-left: 140px; padding-right: 10px;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices blandit erat sed fermentum. Sed scelerisque lacus et condimentum congue.
-                    <br><br>
-                    Morbi eu purus id mauris lobortis bibendum. Praesent nec placerat mi. Maecenas sodales fermentum turpis a vehicula. tincidunt aliquam just.
-                </p>
-            </div>
-            <div id="sidebar">
-                <b><p style="text-align: right; text-decoration: underline;">Most Recent</p></b>
-                <a href="" class="sidebarLinks">
-                    <div class="mostRecentBlogBlock">Blog Title</div>
-                </a>
-                <a href="" class="sidebarLinks">
-                    <div class="mostRecentBlogBlock">Blog Title</div>
-                </a>
-                <a href="" class="sidebarLinks">
-                    <div class="mostRecentBlogBlock">Blog Title</div>
-                </a>
-                <b><p style="text-align: right; text-decoration: underline;">Most Popular</p></b>
-                <a href="" class="sidebarLinks">
-                    <div class="mostRecentBlogBlock">Blog Title</div>
-                </a>
-                <a href="" class="sidebarLinks">
-                    <div class="mostRecentBlogBlock">Blog Title</div>
-                </a>
-            </div>
         </div>
     </body>
     <footer>
         <div id="mainFooterDiv">
             <div id="footer">
-                Footer Text
+                <a href="index.html" style="display: inline">Home</a>
+                <p  style="display: inline"> | </p>
+                <a href=""  style="display: inline">About Us</a>
             </div>
         </div>
     </footer>
